@@ -1,0 +1,12 @@
+[Trigger]
+Operation=Install
+Operation=Upgrade
+Type=Package
+Target=qutebrowser
+Target=qutebrowser-git
+
+[Action]
+Description=Patch qutebrowser to use pac proxy
+When=PostTransaction
+NeedsTargets
+Exec=/usr/bin/patch -d / -p1 -i /usr/share/qutebrowser-pac-proxy-patch/proxy.patch

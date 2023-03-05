@@ -1,0 +1,23 @@
+--- a/usr/lib/python3.10/site-packages/qutebrowser/browser/network/proxy.py	2023-03-05 09:14:16.642766426 +0100
++++ b/usr/lib/python3.10/site-packages/qutebrowser/browser/network/proxy.py	2023-03-05 09:15:00.983693091 +0100
+@@ -35,7 +35,7 @@
+     """Set the application wide proxy factory."""
+     global application_factory
+     application_factory = ProxyFactory()
+-    QNetworkProxyFactory.setApplicationProxyFactory(application_factory)
++    # QNetworkProxyFactory.setApplicationProxyFactory(application_factory)
+ 
+     config.instance.changed.connect(_warn_for_pac)
+     _warn_for_pac()
+@@ -52,8 +52,9 @@
+ 
+ @pyqtSlot()
+ def shutdown():
+-    QNetworkProxyFactory.setApplicationProxyFactory(
+-        None)  # type: ignore[arg-type]
++    pass
++    # QNetworkProxyFactory.setApplicationProxyFactory(
++    #     None)  # type: ignore[arg-type]
+ 
+ 
+ class ProxyFactory(QNetworkProxyFactory):
