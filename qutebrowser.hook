@@ -4,6 +4,7 @@ Operation=Upgrade
 Type=Package
 Target=qutebrowser
 Target=qutebrowser-git
+Target=qutebrowser-qt6-git
 
 [Action]
 Description=Patch qutebrowser to use pac proxy
